@@ -1,18 +1,227 @@
 <html>
-  <head>
-    <title>Visual Cryptography- Erick Chandra GitHub</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    </head>
-  <body>
-    <div class="container-fluid">
-      <h1>Visual Cryptography</h1>
-      <p>About Visual Cryptography. Coming soon...</p>
-      <h2><center>UNDER CONSTRUCTION</center></h2>
-      <p><center><a href="http://www.indonesia.travel" target="_blank">Seek and Travel Indonesia</a></center></p>
-    </div>
-  </body>
+	<head>
+		<title>Kriptografi Visual - Erick Chandra on GitHub</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,100&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.nicescroll.min.js"></script>
+		
+		<script>
+		  var nice = false;
+
+		  $(document).ready(function(mo) {
+			nice = $("html").niceScroll();
+		  });
+		  
+		  var obj = window;//$(window);
+		  
+		  console.log(obj.length);
+		  console.log("selector" in obj);
+		</script>
+		<script>
+			  
+			  function toCell(px,py,ok) {
+				$("#tab1").find('tr').eq(py).find('td').eq(px).addClass((ok)?'testok':'testko');
+			  };
+			  
+			  $(window).load(function() {
+				$("#div1").html($("#div1").html()+' '+nice.version);
+				$("#div2").html($("#div2").html()+' '+navigator.userAgent);
+
+				toCell(1,1,nice.detected.ismozilla);
+				
+				toCell(2,1,(nice.detected.prefixstyle=='-webkit-'));
+				
+				toCell(3,1,nice.detected.isie);
+				toCell(3,2,nice.detected.isie10);
+				toCell(3,3,nice.detected.isie9);
+				toCell(3,4,nice.detected.isie8);
+				toCell(3,5,nice.detected.isie7);
+				toCell(3,6,nice.detected.isieold);
+
+				toCell(4,1,nice.detected.isopera);
+				
+				toCell(5,1,nice.detected.isios);
+				toCell(5,2,nice.detected.isios4);
+
+				toCell(0,8,nice.detected.cantouch);
+				toCell(3,8,nice.detected.hasmstouch);
+
+				toCell(1,10,nice.detected.hastransform);
+				toCell(1,11,nice.detected.hastranslate3d);
+				toCell(2,10,nice.detected.hastransition);
+				toCell(2,11,!!nice.detected.transitionend);
+				toCell(3,10,nice.hasanimationframe);
+				toCell(3,11,nice.hascancelanimationframe);
+
+				toCell(1,12,nice.detected.hasmousecapture);
+				toCell(2,12,((nice.detected.cursorgrabvalue!='')&&(nice.detected.cursorgrabvalue.substr(0,3)!='url')));
+
+				
+			  });
+			  
+			</script>
+
+			<meta name="viewport" content="user-scalable=no" />
+		<link rel="stylesheet" href="css/vc.css">
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			Kriptografi Visual
+		</nav>
+		
+		<br><br><br><br><br>
+		<div class="container-fluid col-sm-3">
+			<br>
+			
+			<!-- Single button -->
+			<div class="btn-group pull-right">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				Tentang <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="http://itb.ac.id" target="_blank">Institut Teknologi Bandung</a></li>
+				<li><a href="http://sutomo-mdn.sch.id" target="_blank">SMA Sutomo 1 Medan</a></li>
+				<li class="divider"></li>
+				<li><a href="http://indonesia.travel" target="_blank">Kunjungi Indonesia</a></li>
+			  </ul>
+			</div>
+		</div>
+		<div class="container-fluid col-sm-6">
+			<h1 align="right">Ilmu Komputer</h1>
+			<hr>
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h2 class="panel-title" align="right">Definisi</h2>
+				</div>
+				<div class="panel-body">
+					<p align="right" style="margin-top:0em;">
+						<em>
+						<strong>Kriptografi visual</strong> adalah sebuah teknik atau orang menyebutnya seni enkripsi untuk menyembunyikan informasi dari pihak yang tidak berwenang dalam bentuk manipulasi citra sedemikian sehingga cara untuk mendekripsi hanya dapat dilakukan dengan penglihatan manusia jika kunci citra yang digunakan sesuai.
+						</em>
+					</p>
+				</div>
+			</div>
+			
+			<h2>Sejarah</h2>
+			<p>
+				Teknik ini dipelopori oleh <strong><em>Moni Naor</em></strong> dan <strong><em>Adi Shamir</em></strong>, yang membuatnya pada tahun 1994. Mereka memperagakan sebuah skema visual untuk berbagi informasi secara rahasia. Caranya adalah dengan memecahkan sebuah citra tertentu ke dalam n buah keping, sehingga hanya pihak tertentu yang memiliki kepingan <em>n</em> yang lain yang dapat mendekripsi citra tersebut, sementara semua <em>n-1</em> keping tidak memperlihatkan informasi apapun terhadap citra aslinya. Setiap keping dicetak pada sebuah lapisan transparan dan metode pendekripsian hanya dengan menimpa kedua lapisan tersebut untuk menjadikan suatu citra yang utuh.
+			</p>
+			
+			<h2>Cara kerja Kriptografi Visual</h2>
+			<p>
+				Setiap pixel dari citra dibagi-bagi menjadi kotak yang kecil-kecil. Banyaknya kotak putih (transparan) dan kotak hitam akan sama banyaknya. Jika sebuah pixel dibagi menjadi dua bagian, akan ada satu yang putih dan satu yang hitam. Jika pixel dibagi menjadi empat bagian yang sama, maka akan ada dua buah yang putih dan dua buah yang hitam.
+			</p>
+			
+			<div align="center">
+				<img class="img-responsive" src="http://upload.wikimedia.org/wikipedia/commons/0/0e/Visual_crypto_animation_demo.gif">
+			</div>
+			
+			<p>
+				Pada gambar, dapat dilihat bahwa sebuah pixel dibagi menjadi empat bagian dan dapat dibedakan menjadi enam buah status yang berbeda. Jika sebuah pixel pada lapisan 1 memberikan sebuah status, maka lapisan 2 dapat menyediakan status yaitu identik dengan atau terbalik dari pixel dari lapisan 1. Jika pixel dari lapisan 2 memberikan status yang sama pada lapisan 1, maka lapisan penimpaan akan menghasilkan setengah hitam dan setengah lagi putih. Penimpaan yang demikian disebut pixel abu-abu atau kosong. Jika pixel dari lapisan 1 dan lapisan 2 saling terbalik, maka hasil timpaan akan memperlihatkan hitam semua. Ini akan menjadi pixel informasi.
+			</p>
+			
+			<p>
+				Sekarang kita dapat membuat dua buah lapisan. Satu lapisan citra bening, lapisan 1, yang mempunyai pixel yang statusnya diacak, satu dari enam kemungkinan status. Lapisan 2 adalah lapisan yang sama persis dengan lapisan 1, kecuali untuk pixel yang harus menjadi hitam (menyimpan informasi) ketika tertimpa. Pixel-pixel ini memiliki sebuah status yang merupakan keterbalikan dari yang lapisan 1. Jika kedua lapisan ditimpa, maka daerah dengan status yang persis akan terlihat abu-abu, dan daerah yang memiliki status yang saling terbalik akan terlihat hitam.
+			</p>
+			
+			<p>
+				Sistem pixel dapat diterapkan dalam berbagai cara. Sebagai contoh, setial pixel dibagi menjadi empat buah kotak. Tetapi, kita juga bisa menggunakan pixel, untuk dibagi menjadi dua buah persegi panjang, atau bahkan menjadikannya lingkaran. Dan juga, tidak peduli apakah pixel tersebut dibagi secara horizontal maupun vertikal. Ada banyak sistem pixel yang berbeda, beberapa dengan kontras yang lebih tajam, resolusi yang lebih tinggi atau mungkin dengan pixel berwarna. Untuk pixel berwarna, seperti yang kita ketahui pada pencampuran warna, lapisan transparan mematuhi aturan mode warna yang kita pakai. Ada beberapa mode warna yaitu <em>RGB (Red-Green-Blue)</em> yang khusus untuk cahaya tampak misalnya pada layar monitor, dan <em>CMYK (Cyan-Magenta-Yellow-Black)</em> yang khusus untuk keperluan warna di kertas atau pencetakan. Pencampuran <em>RGB</em> dengan <em>CMYK</em> adalah berbeda.
+			</p>
+			
+			<div align="center">
+				<img class="img-responsive img-thumbnail" src="http://users.telenet.be/d.rijmenants/pics/vispixel.GIF">
+			</div>
+			
+			<p>
+				Jika status dari pixel 1 adalah benar-benar acakan (yang aman secara kriptografi), kedua pixel kosong dan pixel informasi dari lapisan 2 akan menghasilkan status yang acak juga. Kita tidak dapat mengetahui lagi kalau pixel di lapisan 2 digunakan untuk membuat sebuah pixel abu-abu atau pixel hitam, dikarenakan kita hanya perlu status dari pixel dalam lapisan 1 (yang sudah teracak) untuk mengetahui hasil setelah penimpaan. Jika semua syarat untuk menciptakan acakan yang aman sesuai dengan kriptografi, maka kriptografi visual akan menjadi sangat rahasia yang berkaitan dengan teori penyebaran informasi.
+			</p>
+			
+			<div class="pull-right">
+				<img class="img-responsive" src="http://users.telenet.be/d.rijmenants/pics/vcsanimation.gif">
+			</div>
+			
+			<p>
+				Jika kriptografi visual digunakan untuk komunikasi yang aman, pengirim akan memberikan satu atau lebih lapisan acak 1 kepada penerimanya. Jika pengirim memiliki sebuah pesan, ia membuat lapisan baru, yaitu lapisan 2, yang berpasangan lapisan 1 tertentu dan mengirimnya lagi kepada penerima. Penerima akan mencoba mencocokkan kedua lapisan yang bersesuaian dan informasi yang rahasia akan tampak, dengan tanpa memerlukan alat untuk enkripsi, hanya dengan sebuah komputer yang dapat melakukan kalkulasi dengan tangan. Sistem akan aman dan tidak rusak, jika dan hanya jika kedua lapisan tersebut tidak jatuh kepada pihak yang tidak bertanggung jawab. Ketika satu dari kedua lapisan dipisahkan atau dipotong, akan tidak mungkin lagi untuk menerima informasi yang terenkripsi tersebut.
+			</p>
+			
+			<h2>Kesimpulan</h2>
+			<p>
+				Kriptografi visual dapat dikatakan aman untuk digunakan dengan syarat kedua lapisan tidak boleh jatuh ke tangan orang yang tidak berkepentingan. Untuk pembangkitan gambarnya sendiri dilakukan dengan bantuan komputer, yang memiliki algoritma tertentu untuk mengacaknya. Algoritma pengacakan lebih akurat bila mempertimbangkan peluang distribusi titik-titik atau kotak hitam putihnya. Lapisan yang akan dicetak gambar acak tersebut harus bening transparan. Namun, dengan bantuan komputer juga, bahkan kita dapat melakukannya tanpa mencetaknya.
+			</p>
+			
+			<br><br><br>
+			<div class="panel panel-warning">
+				<div class="panel-heading">
+					<h2 class="panel-title" align="right">Referensi</h2>
+				</div>
+				<div class="panel-body">
+					<p style="margin-top:0em;">
+						<ul>
+							<li>Naor, M. and A. Shamir. Visual cryptography, Advances in cryptology. Eurocrypt ’94 Proceeding LNCS, 950:1–12, 1995.</li>
+							<li>Verheul, E.R. and H.C.A.van Tilborg. Constructions and properties of k out of n visual secret sharing schemes. Design Codes and Cryptography, 11(2):179–196, 1997.</li>
+							<li>Ateniese, G., C. Blundo, A. De Santis, and D. R. Stinson. Extended capabilities for visual cryptography. Theoretical Computer Science, 250:143–161, 2001.</li>
+							<li>Gnanaguruparan, M. and Kak, S. Recursive hiding of secrets in visual cryptography. Cryptologia, vol. 26, pp. 68-76, 2002.</li>
+							<li>Cook, Richard C. (1960) Cryptographic process and enciphered product, United States patent 4,682,954.</li>
+							<li>Carlson, Carl O. (1961) Information encoding and decoding method, United States patent 3,279,095.</li>
+							<li>Kafri, O. and E. Keren. Encryption of pictures and shapes by random grids. Optics Letters, Vol. 12, Issue 6, pp. 377–379 (1987)</li>
+							<li>Arazi, B., I. Dinstein, O. Kafri. Intuition, perception, and secure communication. IEEE Transactions on Systems, Man and Cybernetics. Vol. 19, Issue 5, pp. 1016–1020 (1989)</li>
+							<li>Askari, Nazanin; Moloney, Cecilia; Heys, Howard M. (November 2011). "Application of Visual Cryptography to Biometric Authentication". NECEC 2011. Retrieved 12 February 2015.</li>
+							<li>Horng, G, Chen, T. and Tasi, D.S. Cheating in Visual Cryptography, Designs, Codes and Cryptography, 2006, pp219–236</li>
+							<li>http://en.wikipedia.org/wiki/Visual_cryptography</li>
+							<li>http://users.telenet.be/d.rijmenants/en/visualcrypto.htm</li>
+						</ul>
+						<p style="line-height:18px"><em><small>*NB: Untuk setiap gambar, referensi langsung dapat diperoleh dari klik kanan (pilihan menu) dan salin URL gambar</small></em></p>
+					</p>
+				</div>
+			</div>
+			
+			<p><br></p>
+		</div>
+		
+		<br>
+		<div class="container-fluid col-sm-3">
+			
+				<button class="btn btn-danger" type="button">
+				  <span class="glyphicon glyphicon-home"></span> &nbsp; Beranda&nbsp;
+				</button>
+			
+			<br><br>
+			<p><a href="http://if.stei.itb.ac.id">Kunjungi IF ITB</a></p>
+			<div align="center">
+				<iframe style="border:none; box-shadow: 10px 10px #A4A4A4; -webkit-box-shadow: 5px 5px 5px #818181; -moz-box-shadow: 5px 5px 5px #818181;" src="http://if.stei.itb.ac.id" height="300"></iframe>
+			</div>
+			<p><a href="http://itb.ac.id">Kunjungi ITB</a></p>
+			<div align="center">
+				<iframe style="border:none; box-shadow: 10px 10px #A4A4A4; -webkit-box-shadow: 5px 5px 5px #818181; -moz-box-shadow: 5px 5px 5px #818181;" src="http://itb.ac.id" height="300"></iframe>
+			</div>
+		</div>
+		<div class="container-fluid col-sm-12">
+			<div class="panel panel-default">
+			  <div class="panel-body" align="center">
+					<big>Teknik Informatika</big>
+			  </div>
+			  <div class="panel-footer text-muted" align="center"><small>&mdash; Ilmu Rekayasa Komputasi &mdash;</small></div>
+			</div>
+		</div>
+		<script>
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 1){  
+					$('nav').addClass("sticky");
+				}
+				else{
+					$('nav').removeClass("sticky");
+				}
+			});
+		</script>
+	</body>
 </html>
