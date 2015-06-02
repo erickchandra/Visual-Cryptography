@@ -1,0 +1,45 @@
+.navbar-default {
+	background: #003475;
+	color: white;
+}
+
+nav {
+	text-align: center;
+	font-size: 36px;
+	line-height: 85px;
+	height: 85px;
+	background: #F7BE81;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	padding-left: 28px;
+	
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+nav.sticky {
+	position: fixed;
+	font-size: 24px;
+	line-height: 48px;
+	height: 48px; 
+	width: 100%;
+	background: #2D90C9;
+	text-align: left;
+	padding-left: 20px;
+}
+
+h2 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 32px;
+	margin-top: 3em;
+}
+
+p {
+	font-family: 'Roboto', serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 32px;
+	margin-top: 1.5em;
+}
